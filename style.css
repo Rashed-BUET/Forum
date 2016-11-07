@@ -1,0 +1,38 @@
+
+body{
+  font-family: Cambria;
+}
+p{
+  font-family: Cambria !important;
+  font-size: 15px;
+}
+
+.rowPadding{
+  padding: 10px 100px;
+}
+.marLeft{
+  margin-left: 50px;
+}
+.wide{
+  width: 100%;
+}
+.questionHeading{
+  border-bottom: 2px solid;
+  margin-bottom: 20px;
+}
+.person{
+  border-radius: 50px;
+  width: 100px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+.avater{
+  background-color: #124396;
+  color: white;
+  width: 250px;
+  padding: 20px;
+  float: auto;
+}
+.question{
+  margin-bottom: 50px;
+}
