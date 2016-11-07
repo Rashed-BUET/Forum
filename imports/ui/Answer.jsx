@@ -28,10 +28,6 @@ export default class Answer extends Component {
 
     Meteor.call('dbAnswer.update', this.props.answer._id, this.refs.body.value);
 
-    dbAnswer.update(this.props.answer._id, {
-      $set: { body: this.refs.body.value },
-    });
-
     this.setState({
       editMode: !this.state.editMode,
     });

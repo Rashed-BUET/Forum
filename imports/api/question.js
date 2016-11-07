@@ -33,6 +33,12 @@ Meteor.methods({
     FlowRouter.go('/questionlist');
   },
 
+  'dbQuestion.update'(id,title,body){
+    dbQuestion.update(id, {
+      $set: { title,body },
+    });
+  },
+
   'dbQuestion.remove'(questionId) {
     check(questionId, String);
     dbQuestion.remove(questionId);
