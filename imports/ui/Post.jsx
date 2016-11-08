@@ -28,10 +28,9 @@ export default class Post extends Component {
         <nav className="navbar navbar-default">
             <div className="row">
               <div className="col-md-4">
-                <i className="fa fa-question-circle fa-5x" aria-hidden="true"></i>
               </div>
               <div className="col-md-4">
-                  <a type="button" className="btn btn-success" href="/">Home</a>
+                  <a type="button" className="btn btn-default" href="/">Home</a>
                </div>
               <div className="col-md-4">
                 <AccountsUIWrapper/>

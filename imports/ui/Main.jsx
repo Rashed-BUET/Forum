@@ -15,7 +15,6 @@ export default class Task extends Component {
         <nav className="navbar navbar-default">
             <div className="row">
               <div className="col-md-4">
-                <i className="fa fa-question-circle fa-5x" aria-hidden="true"></i>
               </div>
               <div className="col-md-4">
                </div>

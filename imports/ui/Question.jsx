@@ -25,7 +25,6 @@ class Question extends Component {
       editMode: false,
     };
   }
-
   handleUpdate(event){
     event.preventDefault();
 
@@ -86,9 +85,10 @@ class Question extends Component {
       );
     }
   }
+
   getButtons(question){
     if(Meteor.user()!= null){
-      if(!this.state.editMode && Meteor.user().username == question.owner)
+      if(!this.state.editMode && this.props.user.username== question.owner )
       {
         return(
           <div>
@@ -163,7 +163,6 @@ class Question extends Component {
         <nav className="navbar navbar-default">
             <div className="row">
               <div className="col-md-4">
-                <i className="fa fa-question-circle fa-5x" aria-hidden="true"></i>
               </div>
               <div className="col-md-2">
                   <a type="button" className="btn btn-default" href="/">Home</a>
@@ -182,8 +181,8 @@ class Question extends Component {
 
 
         {this.renderQuestion()}
-        <div className="container">
-          <h1 className="questionHeading marBottom">Answers</h1>
+        <div className="container marBottom">
+          <h1 className="questionHeading">Answers</h1>
         </div>
         {this.renderAnswer()}
 
@@ -218,5 +217,6 @@ export default createContainer((props) => {
   return {
     questions: dbQuestion.find({_id: props.id}).fetch(),
     answers: dbAnswer.find({questionId:props.id}).fetch(),
+    user: Meteor.user(),
   };
 }, Question);

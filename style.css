@@ -7,6 +7,10 @@ p{
   font-size: 15px;
 }
 
+.black{
+  color: black !important;
+}
+
 .rowPadding{
   padding: 10px 100px;
 }
