@@ -153,7 +153,34 @@ class Question extends Component {
     ));
   }
 
-
+renderForm(){
+  if(Meteor.user()){
+    return(
+      <div className="jumbotron container">
+        <form className="form-horizontal" onSubmit={this.handleSubmit.bind(this)}>
+          <div className="form-group">
+            <div className="col-sm-10">
+              <textarea className="form-control" ref="body" rows="10"  id="inputPassword3" placeholder="Type your answer of the question here..."></textarea>
+            </div>
+          </div>
+          <div className="form-group">
+            <div className="col-sm-offset-2 col-sm-10">
+              <button type="submit" className="btn btn-success">Answer</button>
+              <a  className="btn btn-default marLeft" href="/">Return Home</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    );
+  }
+  else{
+    return(
+      <div className="jumbotron container">
+        <h2>Please sign in to answer any Question.<br/> Thank You for visting our website.</h2>
+      </div>
+    );
+  }
+}
 
 
   render() {
@@ -187,23 +214,9 @@ class Question extends Component {
         {this.renderAnswer()}
 
 
+        {this.renderForm()}
 
 
-        <div className="jumbotron container">
-          <form className="form-horizontal" onSubmit={this.handleSubmit.bind(this)}>
-            <div className="form-group">
-              <div className="col-sm-10">
-                <textarea className="form-control" ref="body" rows="10"  id="inputPassword3" placeholder="Type your answer of the question here..."></textarea>
-              </div>
-            </div>
-            <div className="form-group">
-              <div className="col-sm-offset-2 col-sm-10">
-                <button type="submit" className="btn btn-success">Answer</button>
-                <a  className="btn btn-default marLeft" href="/">Return Home</a>
-              </div>
-            </div>
-          </form>
-        </div>
       </div>
     );
   }

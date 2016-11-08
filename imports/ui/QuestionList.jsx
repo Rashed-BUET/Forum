@@ -44,6 +44,9 @@ class QuestionList extends Component {
               Question Lists
             </div>
             <div className="panel-body">
+              <div className="row">
+                  <a type="button" className="btn btn-default marLeft marBottom" href="/post">Post Question</a>
+               </div>
               {this.renderQuestion()}
             </div>
           </div>
