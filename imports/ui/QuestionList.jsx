@@ -14,8 +14,8 @@ class QuestionList extends Component {
 
   renderQuestion() {
 
-    return this.props.questions.map((question) => (
-      <div className="alert alert-info" role="alert">
+    return this.props.questions.map((question, i) => (
+      <div className="alert alert-info" key={i} role="alert">
         <a href={'/question/' + question._id}>{question.title}</a>
         </div>
     ));

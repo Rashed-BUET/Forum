@@ -32,14 +32,33 @@ Meteor.methods({
   },
 
   'dbAnswer.remove'(answerId) {
+
     check(answerId, String);
-    dbAnswer.remove(answerId);
+    const answer = dbAnswer.findOne(answerId);
+
+    if(answer.owner == Meteor.user().username){
+        dbAnswer.remove(answerId);
+    }
+    else{
+      throw new Meteor.Error('not-authorized');
+    }
+
   },
 
   'dbAnswer.update'(id,body){
-    dbAnswer.update(id, {
-      $set: { body: body },
-    });
+
+    const answer = dbAnswer.findOne(id);
+
+    if(answer.owner == Meteor.user().username){
+      dbAnswer.update(id, {
+        $set: { body: body },
+      });
+    }
+    else{
+      throw new Meteor.Error('not-authorized');
+    }
+
+
 }
 
 

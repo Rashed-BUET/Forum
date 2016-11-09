@@ -176,7 +176,7 @@ renderForm(){
   else{
     return(
       <div className="jumbotron container">
-        <h2>Please sign in to answer any Question.<br/> Thank You for visting our website.</h2>
+        <h2 className="marLeft">Please sign in to answer any Question.<br/> Thank You for visting our website.</h2>
       </div>
     );
   }
@@ -188,6 +188,7 @@ renderForm(){
     return (
       <div>
         <nav className="navbar navbar-default">
+
             <div className="row">
               <div className="col-md-4">
               </div>

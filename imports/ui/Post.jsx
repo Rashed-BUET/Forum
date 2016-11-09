@@ -28,13 +28,13 @@ class Post extends Component {
         <div className="jumbotron">
           <form className="form-horizontal" onSubmit={this.handleSubmit.bind(this)}>
             <div className="form-group">
-              <label for="inputEmail3" className="col-sm-2 control-label">Question Title</label>
+              <label htmlFor="inputEmail3" className="col-sm-2 control-label">Question Title</label>
               <div className="col-sm-10">
                 <input type="text" ref="title" className="form-control" id="inputEmail3" placeholder="Title"/>
               </div>
             </div>
             <div className="form-group">
-              <label for="inputPassword3" className="col-sm-2 control-label">Question Body</label>
+              <label htmlFor="inputPassword3" className="col-sm-2 control-label">Question Body</label>
               <div className="col-sm-10">
                 <textarea className="form-control" ref="body" rows="10"  id="inputPassword3" placeholder="Type your Question body here..."></textarea>
               </div>
@@ -51,7 +51,7 @@ class Post extends Component {
     }
     else{
       return(
-        <h2>Please Sign in first to past a question.</h2>
+        <h2>Please Sign in first to post a question.</h2>
       );
     }
   }
